@@ -9,7 +9,11 @@ I'd like to explore how this information can be conveyed in a passive way, that 
 ## Installation
 * `git clone git@github.com:langphil/iss-notifier.git`
 * `cd iss-notifier`
-* `python iss.py`
+* Install libraries listed below
+* Get a [Pushover](https://pushover.net) account for notifications to your phone.
+* Create variables for your Pushover 'user_key' & 'api_token' in a new file 'config.py'
+* Install the Pushover app on your phone
+* Run `python iss.py`
 
 
 ## Libraries
@@ -22,8 +26,14 @@ $ `pip install requests`
 * pandas
 $ `pip install pandas`
 
+* Pushover
+$ `pip install python-pushover`
+
 
 ## ToDo
-* [ ] Consider how notifications happen - build
+* [x] Initially build a mobile phone notification
+* [ ] Mobile notifications only to happen between the hours of 19:00 - 23:00
+* [ ] Consider how notifications happen - look at raspberrypi and motor device
+* [ ] Remove time of ISS pass from the dictionary once it has happened
 * [ ] Subtract 10 minutes from the pass time for when notifications happen
 * [ ] Write proper Documentation

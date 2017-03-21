@@ -1,16 +1,12 @@
 import requests
-import time
-import datetime
 import pandas as pd
 from bs4 import BeautifulSoup
 
-# Get the current time
-timeNow = time.strftime("%a %d %b, %H:%M %p")
 
 # Get HTML
 result = requests.get('https://spotthestation.nasa.gov/sightings/view.cfm?country=United_Kingdom&region=England&city=London')
 content = result.content
-print result.status_code
+# print result.status_code
 
 
 # Beautiful Soupify
