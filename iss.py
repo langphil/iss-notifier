@@ -1,4 +1,14 @@
+import time
+import datetime
+from pushover import init, Client
 from scraper import *
+from config import *
+
+# Get the current time
+timeNow = time.strftime("%a %b %d, %I:%M %p").lstrip("0").replace(" 0", " ")
+
+# Initialise Pushover for notifications
+client = Client(user_key, api_token=api_token)
 
 
 # Loop for times of ISS passes and compare to current time
@@ -8,11 +18,9 @@ def issCheck():
             if i == 'Date':
                 issNow = x
                 if issNow == timeNow:
-                    print 'ISS will pass overhead in 5 minutes'
-                    # Add notification function here
+                    client.send_message("ISS is over London: " + x, title="ISS")
                 else:
-                    print'Not quite yet'
-                    # Add timeout and pass to while loop
+                    break
 
 
 while True:
